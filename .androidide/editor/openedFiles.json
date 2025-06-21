@@ -1,0 +1,20 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/FReader/app/src/main/java/com/freader/dev/extractor/epub/EpubLocator.java",
+      "selection": {
+        "end": {
+          "column": 25,
+          "index": 66,
+          "line": 2
+        },
+        "start": {
+          "column": 25,
+          "index": 66,
+          "line": 2
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/FReader/app/src/main/java/com/freader/dev/extractor/epub/EpubLocator.java"
+}

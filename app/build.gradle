@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    
+}
+
+android {
+    namespace 'com.freader.dev'
+    compileSdk 35
+    
+    defaultConfig {
+        applicationId "com.freader.dev"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "0.0.1-alpha01"
+        
+        vectorDrawables { 
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+        
+    }
+    
+}
+
+dependencies {
+    def room_version = "2.7.2"
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.github.smith8h:SDialogs:4.5")
+    // Room DB
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    // Paging 3 Integration
+    implementation("androidx.room:room-paging:$room_version")
+}
