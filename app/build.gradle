@@ -33,20 +33,18 @@ android {
 
     buildFeatures {
         viewBinding true
-        
     }
     
 }
 
 dependencies {
-    def room_version = "2.7.2"
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.google.android.material:material:1.12.0")
     implementation("com.github.smith8h:SDialogs:4.5")
-    // Room DB
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
-    // Paging 3 Integration
-    implementation("androidx.room:room-paging:$room_version")
+    implementation('io.documentnode:epub4j-core:4.2.1') {
+       exclude group: 'xmlpull'
+    }
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 }

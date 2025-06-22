@@ -2,6 +2,8 @@ package com.freader.dev;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.viewpager2.widget.ViewPager2;
+import com.freader.dev.adapter.MainPagerFramentAdapter;
 import com.freader.dev.databinding.ActivityMainBinding;
 import com.freader.dev.db.library.LibraryDatabaseHelper;
 import smith.lib.alerts.dialog.AlertSDialog;
@@ -11,7 +13,8 @@ import smith.lib.alerts.dialog.callbacks.OnClickCallback;
 public class MainActivity extends AppCompatActivity {
 
   private ActivityMainBinding binding;
-  private LibraryDatabaseHelper libraryDB;
+  private MainPagerFramentAdapter fragmentAdapter;
+  private ViewPager2 pager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -20,59 +23,18 @@ public class MainActivity extends AppCompatActivity {
     binding = ActivityMainBinding.inflate(getLayoutInflater());
     // set content view to binding's root
     setContentView(binding.getRoot());
-    showAlertSDialog();
     initialize();
     initializeLogic();
   }
 
   private void initialize() {
-    libraryDB = new LibraryDatabaseHelper(this);
+    fragmentAdapter = new MainPagerFramentAdapter(this);
+    binding.viewpager.setAdapter(fragmentAdapter);
+    binding.viewpager.setUserInputEnabled(true);
+    binding.viewpager.setCurrentItem(0, true);
   }
 
-  private void initializeLogic() {
-    checkLibrary();
-  }
-
-  private void checkLibrary() {
-    boolean libraryEmpty = libraryDB.isDatabaseEmpty();
-    if (libraryEmpty) {
-      showAlertSDialog();
-    } else {
-    }
-  }
-
-  private void showAlertSDialog() {
-    AlertSDialog dialog = new AlertSDialog(MainActivity.this);
-    dialog.setTitle("Empty Library");
-    dialog.setText(
-        "You currently do not have any data on your library. Please import books to start!");
-    dialog.setTheme(SDialog.THEME_BY_SYSTEM);
-    dialog.setPositiveButton(
-        "Import",
-        new OnClickCallback() {
-          @Override
-          public void onClick() {
-            // TODO: Implement this method
-          }
-        });
-    dialog.setNegativeButton(
-        "Browse",
-        new OnClickCallback() {
-          @Override
-          public void onClick() {
-            // TODO: Implement this method
-          }
-        });
-    dialog.setNeutralButton(
-        "Cancel",
-        new OnClickCallback() {
-          @Override
-          public void onClick() {
-            dialog.dismiss();
-          }
-        });
-    dialog.show();
-  }
+  private void initializeLogic() {}
 
   @Override
   protected void onDestroy() {

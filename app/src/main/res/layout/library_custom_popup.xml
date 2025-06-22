@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:background="@drawable/popup_bg"
+     android:padding="12dp"
+     android:orientation="vertical"
+     android:id="@+id/popupLayout">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:padding="8dp"
+         android:orientation="horizontal"
+         android:id="@+id/importFileMenu">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="13dp"
+             android:fontFamily="@font/poppins_medium"
+             android:textColor="?attr/colorOnSurfaceVariant"
+             android:maxLines="1"
+             android:text="Import Books" />
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:padding="8dp"
+         android:orientation="horizontal"
+         android:id="@+id/browseMenu">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content"
+             android:textSize="13dp"
+             android:fontFamily="@font/poppins_medium"
+             android:textColor="?attr/colorOnSurfaceVariant"
+             android:maxLines="1"
+             android:text="Browse Online" />
+
+    </LinearLayout>
+
+</LinearLayout>
